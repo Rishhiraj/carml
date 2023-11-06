@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modern ML Model Web App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="content">
+            <h1>Machine Learning Model Web App</h1>
+            <p>Enter data and get predictions:</p>
+            <form id="mlForm" method="POST" action="/predict">
+                <div class="input-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" placeholder="Enter age..." min="0">
+                </div>
+                <div class="input-group">
+                    <label for="annualIncome">Annual Income:</label>
+                    <input type="number" id="annualIncome" name="annualIncome" placeholder="Enter annual income..." min="0">
+                </div>
+                <button type="submit">Get Prediction</button>
+            </form>
+            <div id="predictionResult"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

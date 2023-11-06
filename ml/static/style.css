@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.stars {
+    background: url('{{ url_for('static', filename='stars.jpg') }}'); /* Add your starry night background image */
+    animation: animate 30s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 10000px 10000px; /* Adjust values for animation speed */
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#predictionResult {
+    margin-top: 20px;
+    font-weight: bold;
+}
